@@ -1,0 +1,18 @@
+Best extends move:
+	field: int score, depth;
+
+MachinePlayer:
+	field: int color;
+		 Board board;
+	method: private Move minimax(boolean side, int alpha, int beta, int depth);
+
+Board:
+	field: int[][] state, direct;
+		 int[] chips_X, chips_Y;
+	method: boolean validMove(Move m, int color);
+		  ArrayList<Move> validMoveList(boolean side);
+		  void setMove(Move m, int color);
+		  void cancelMove(Move m, int color);
+		  boolean findNetwork(int color);
+		  double evalFunc(int color);
+		  
